@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: dsaltares/fetch-gh-release-asset@master
+      with:
+        version: "latest"
+        file: "**/*.zip"
+        token: ${{ secrets.GH_TOKEN }}
     # Setup .npmrc file to publish to npm
     - uses: actions/setup-node@v1
       with:
